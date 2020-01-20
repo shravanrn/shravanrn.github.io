@@ -5,10 +5,8 @@ dt {
 	float: left;
 	clear: left;
 	font-weight: bold;
+	padding-right: 10px;
 }
 dt::after {
 	content: ":";
-}
-dd {
-	margin: 0 0 0 70px;
 }
