@@ -10,3 +10,6 @@ dt {
 dt::after {
 	content: ":";
 }
+#profile {
+	height: 3in;
+}
