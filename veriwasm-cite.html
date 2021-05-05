@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>How to cite the Veriwasm paper in latex</title>
+	<link rel="stylesheet" type="text/css" href="index.css">
+</head>
+
+<body>
+	<h1>How to cite the Veriwasm paper in latex</h1>
+    <p>1. Add cyrillic support to latex. On Ubuntu, you can install this via</p>
+    <pre>
+        sudo apt install texlive-lang-cyrillic
+    </pre>
+
+    <p>2. Next, add the following package reference to your latex file</p>
+    <pre>
+        \usepackage[utf8]{inputenc}
+        \usepackage[russian, english]{babel}
+    </pre>
+    <p>3. Add the following to your bib file</p>
+    <pre>
+        @inproceedings{veriwasm,
+            author    = {Evan Johnson and David Thien and Yousef Alhessi and Shravan 
+            Narayan and Fraser Brown and Sorin Lerner and Tyler McMullen and Stefan Savage 
+            and Deian Stefan},
+            title     = {\foreignlanguage{russian}{Довер\'{я}й, но провер\'{я}й}: {SFI} 
+            safety for native-compiled {Wasm}},
+            booktitle = {NDSS},
+            year      = {2021},
+            publisher = {Internet Society}
+        }
+    </pre>
+</body>
+
+</html>
