@@ -6,17 +6,17 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>1 Overview &#8212; RLBox Sandboxing API  documentation</title>
-    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
-    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-    <script src="_static/jquery.js"></script>
-    <script src="_static/underscore.js"></script>
-    <script src="_static/doctools.js"></script>
-    <script src="_static/language_data.js"></script>
+    <link rel="stylesheet" href="static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="static/alabaster.css" type="text/css" />
+    <script id="documentation_options" data-url_root="./" src="static/documentation_options.js"></script>
+    <script src="static/jquery.js"></script>
+    <script src="static/underscore.js"></script>
+    <script src="static/doctools.js"></script>
+    <script src="static/language_data.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
    
-  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  <link rel="stylesheet" href="static/custom.css" type="text/css" />
   
   <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
 
@@ -99,7 +99,7 @@ for example, corrupt Firefox’s address space. It also ensures that Firefox
 cannot inadvertently expose sensitive data to the library (e.g., pointers that
 would leak its ASLR).</p>
 <div class="figure align-center" id="id7">
-<span id="arch-fig"></span><img alt="RLBox architecture" src="_images/arch.png" />
+<span id="arch-fig"></span><img alt="RLBox architecture" src="images/arch.png" />
 <p class="caption"><span class="caption-number">Fig. 1 </span><span class="caption-text">Sandboxed libraries are isolated from the application and all communication
 between the sandboxed library and application code is mediated. This ensures
 that the application code is robust and does not use untrusted,
@@ -167,7 +167,7 @@ library:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">//</span> <span class="n">main</span><span class="o">.</span><span class="n">cpp</span><span class="p">:</span>
 
 <span class="c1">#define RLBOX_SINGLE_THREADED_INVOCATIONS</span>
-<span class="c1">#define RLBOX_USE_STATIC_CALLS() rlbox_noop_sandbox_lookup_symbol</span>
+<span class="c1">#define RLBOX_USEstatic_CALLS() rlbox_noop_sandbox_lookup_symbol</span>
 
 <span class="c1">#include &lt;stdio.h&gt;</span>
 <span class="c1">#include &quot;mylib.h&quot;</span>
@@ -361,7 +361,7 @@ with a particular library and only then switch over to the Wasm-based sandbox.</
 <p>Creating sandboxes is mostly straightforward.  For the null sandbox, however,
 you need to add a <code class="docutils literal notranslate"><span class="pre">#define</span></code> at the top of your entry file, before you include
 the RLBox headers:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#define RLBOX_USE_STATIC_CALLS() rlbox_noop_sandbox_lookup_symbol</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#define RLBOX_USEstatic_CALLS() rlbox_noop_sandbox_lookup_symbol</span>
 <span class="o">...</span>
 <span class="n">rlbox</span><span class="p">::</span><span class="n">rlbox_sandbox</span><span class="o">&lt;</span><span class="n">rlbox_noop_sandbox</span><span class="o">&gt;</span> <span class="n">sandbox</span><span class="p">;</span>
 <span class="n">sandbox</span><span class="o">.</span><span class="n">create_sandbox</span><span class="p">();</span>
@@ -867,8 +867,8 @@ standard library equivalents, but they accept tainted data.</p>
 <div class="line"><br /></div>
 </div>
 <dl class="cpp function">
-<dt id="_CPPv4I000I00E0EN5rlbox19sandbox_static_castE7taintedI5T_Lhs5T_SbxERK6T_WrapI5T_Rhs5T_SbxE">
-<span id="_CPPv3I000I00E0EN5rlbox19sandbox_static_castERK6T_WrapI5T_Rhs5T_SbxE"></span><span id="_CPPv2I000I00E0EN5rlbox19sandbox_static_castERK6T_WrapI5T_Rhs5T_SbxE"></span>template&lt;typename <code class="sig-name descname">T_Lhs</code>, typename <code class="sig-name descname">T_Rhs</code>, typename <code class="sig-name descname">T_Sbx</code>, template&lt;typename, typename&gt; typename <code class="sig-name descname">T_Wrap</code>&gt;<br /><span class="target" id="rlbox__stdlib_8hpp_1aa12ee34a239e9dac6ad8cafb7e859a6a"></span><a class="reference internal" href="#_CPPv4I00EN5rlbox7taintedE" title="rlbox::tainted">tainted</a>&lt;<a class="reference internal" href="#_CPPv4I000I00E0EN5rlbox19sandbox_static_castE7taintedI5T_Lhs5T_SbxERK6T_WrapI5T_Rhs5T_SbxE" title="rlbox::sandbox_static_cast::T_Lhs">T_Lhs</a>, <a class="reference internal" href="#_CPPv4I000I00E0EN5rlbox19sandbox_static_castE7taintedI5T_Lhs5T_SbxERK6T_WrapI5T_Rhs5T_SbxE" title="rlbox::sandbox_static_cast::T_Sbx">T_Sbx</a>&gt; <code class="sig-prename descclassname">rlbox<code class="sig-prename descclassname">::</code></code><code class="sig-name descname">sandbox_static_cast</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="#_CPPv4I000I00E0EN5rlbox19sandbox_static_castE7taintedI5T_Lhs5T_SbxERK6T_WrapI5T_Rhs5T_SbxE" title="rlbox::sandbox_static_cast::T_Wrap">T_Wrap</a>&lt;<a class="reference internal" href="#_CPPv4I000I00E0EN5rlbox19sandbox_static_castE7taintedI5T_Lhs5T_SbxERK6T_WrapI5T_Rhs5T_SbxE" title="rlbox::sandbox_static_cast::T_Rhs">T_Rhs</a>, <a class="reference internal" href="#_CPPv4I000I00E0EN5rlbox19sandbox_static_castE7taintedI5T_Lhs5T_SbxERK6T_WrapI5T_Rhs5T_SbxE" title="rlbox::sandbox_static_cast::T_Sbx">T_Sbx</a>&gt; &amp;<em>rhs</em><span class="sig-paren">)</span> <em class="property">noexcept</em><a class="headerlink" href="#_CPPv4I000I00E0EN5rlbox19sandbox_static_castE7taintedI5T_Lhs5T_SbxERK6T_WrapI5T_Rhs5T_SbxE" title="Permalink to this definition">¶</a><br /></dt>
+<dt id="_CPPv4I000I00E0EN5rlbox19sandboxstatic_castE7taintedI5T_Lhs5T_SbxERK6T_WrapI5T_Rhs5T_SbxE">
+<span id="_CPPv3I000I00E0EN5rlbox19sandboxstatic_castERK6T_WrapI5T_Rhs5T_SbxE"></span><span id="_CPPv2I000I00E0EN5rlbox19sandboxstatic_castERK6T_WrapI5T_Rhs5T_SbxE"></span>template&lt;typename <code class="sig-name descname">T_Lhs</code>, typename <code class="sig-name descname">T_Rhs</code>, typename <code class="sig-name descname">T_Sbx</code>, template&lt;typename, typename&gt; typename <code class="sig-name descname">T_Wrap</code>&gt;<br /><span class="target" id="rlbox__stdlib_8hpp_1aa12ee34a239e9dac6ad8cafb7e859a6a"></span><a class="reference internal" href="#_CPPv4I00EN5rlbox7taintedE" title="rlbox::tainted">tainted</a>&lt;<a class="reference internal" href="#_CPPv4I000I00E0EN5rlbox19sandboxstatic_castE7taintedI5T_Lhs5T_SbxERK6T_WrapI5T_Rhs5T_SbxE" title="rlbox::sandboxstatic_cast::T_Lhs">T_Lhs</a>, <a class="reference internal" href="#_CPPv4I000I00E0EN5rlbox19sandboxstatic_castE7taintedI5T_Lhs5T_SbxERK6T_WrapI5T_Rhs5T_SbxE" title="rlbox::sandboxstatic_cast::T_Sbx">T_Sbx</a>&gt; <code class="sig-prename descclassname">rlbox<code class="sig-prename descclassname">::</code></code><code class="sig-name descname">sandboxstatic_cast</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="#_CPPv4I000I00E0EN5rlbox19sandboxstatic_castE7taintedI5T_Lhs5T_SbxERK6T_WrapI5T_Rhs5T_SbxE" title="rlbox::sandboxstatic_cast::T_Wrap">T_Wrap</a>&lt;<a class="reference internal" href="#_CPPv4I000I00E0EN5rlbox19sandboxstatic_castE7taintedI5T_Lhs5T_SbxERK6T_WrapI5T_Rhs5T_SbxE" title="rlbox::sandboxstatic_cast::T_Rhs">T_Rhs</a>, <a class="reference internal" href="#_CPPv4I000I00E0EN5rlbox19sandboxstatic_castE7taintedI5T_Lhs5T_SbxERK6T_WrapI5T_Rhs5T_SbxE" title="rlbox::sandboxstatic_cast::T_Sbx">T_Sbx</a>&gt; &amp;<em>rhs</em><span class="sig-paren">)</span> <em class="property">noexcept</em><a class="headerlink" href="#_CPPv4I000I00E0EN5rlbox19sandboxstatic_castE7taintedI5T_Lhs5T_SbxERK6T_WrapI5T_Rhs5T_SbxE" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>The equivalent of a static_cast but operates on sandboxed values. </p>
 </dd></dl>
 
@@ -1059,7 +1059,7 @@ example, in the expat library we need to pass a pointer to the receiver:</p>
 tainted pointers exposed to the sandbox. This lets you lookup the pointers in
 callbacks, for example:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">void</span> <span class="n">callback</span><span class="p">(</span><span class="n">rlbox_sandbox_expat</span><span class="o">&amp;</span> <span class="n">aSandbox</span><span class="p">,</span> <span class="o">...</span> <span class="n">tainted_expat</span><span class="o">&lt;</span><span class="n">void</span><span class="o">*&gt;</span> <span class="n">t_driver</span><span class="p">)</span> <span class="p">{</span>
-  <span class="n">nsExpatDriver</span><span class="o">*</span> <span class="bp">self</span> <span class="o">=</span> <span class="n">aSandbox</span><span class="o">.</span><span class="n">lookup_app_ptr</span><span class="p">(</span><span class="n">rlbox</span><span class="p">::</span><span class="n">sandbox_static_cast</span><span class="o">&lt;</span><span class="n">nsExpatDriver</span><span class="o">*&gt;</span><span class="p">(</span><span class="n">t_driver</span><span class="p">));</span>
+  <span class="n">nsExpatDriver</span><span class="o">*</span> <span class="bp">self</span> <span class="o">=</span> <span class="n">aSandbox</span><span class="o">.</span><span class="n">lookup_app_ptr</span><span class="p">(</span><span class="n">rlbox</span><span class="p">::</span><span class="n">sandboxstatic_cast</span><span class="o">&lt;</span><span class="n">nsExpatDriver</span><span class="o">*&gt;</span><span class="p">(</span><span class="n">t_driver</span><span class="p">));</span>
 </pre></div>
 </div>
 <p>Like callbacks, you need to keep app pointers alive and unregister them when
@@ -1166,7 +1166,7 @@ by S. Narayan, C. Disselkoen, T. Garfinkel, S. Lerner, H. Shacham, D. Stefan</p>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.8</a>
       
       |
-      <a href="_sources/index.rst.txt"
+      <a href="sources/index.rst.txt"
           rel="nofollow">Page source</a>
     </div>
 
