@@ -1,15 +1,30 @@
+
 h2 {
 	padding-top: 20px;
 }
-dt {
-	float: left;
-	clear: left;
-	font-weight: bold;
-	padding-right: 10px;
-}
-dt::after {
-	content: ":";
-}
 #profile {
-	height: 3in;
+	height: 2in;
+}
+#profiletext {
+	height: 2in;
+	display: flex;
+	align-items: center; /* align vertical */
+}
+#postprofile {
+	clear: left;
+	margin: 20px 40px 20px 0px;
+}
+.left {
+	float: left;
+}
+.labeltext {
+	font-weight: bold;
+	padding-bottom: 5px;
+}
+.labelvalue {
+	padding-bottom: 10px;
+}
+.authors{
+	color: grey;
+	font-style: italic;
 }

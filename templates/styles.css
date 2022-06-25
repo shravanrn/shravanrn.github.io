@@ -1,0 +1,20 @@
+html,body{margin:0;padding:0}
+body{font: 100% Domine,serif;text-align:center}
+p{margin:0 10px 10px}
+div#header h1{height:80px;line-height:80px;}
+div#container{text-align:left}
+div#content p{line-height:1.4}
+div#navigation{background:#e3e4fa;}
+div#navigation ul{padding:0; list-style-type:none; margin: 0px;}
+div#navigation li{margin-bottom:5px;}
+div#papers ul{padding:0; list-style-type:none; margin: 0px;}
+div#papers li{margin-bottom:20px;}
+div#extra{background:#c7c8eb;}
+div#footer{background:#8183db;}
+div#footer p{margin:0;padding:5px 10px}
+div#container{width:900px;margin:0 auto}
+div#wrapper{float:left;width:100%}
+div#content{margin: 0 200px; padding-left: 10px;}
+div#navigation{float:left;width:170px;margin-left:-900px;padding:10px; }
+div#extra{float:right;width:180px;margin-left:-200px; padding: 10px; }
+div#footer{clear:left;width:100%; min-height: 20px; }
