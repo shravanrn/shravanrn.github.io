@@ -1,5 +1,5 @@
 html,body{margin:0;padding:0}
-body{font: 100% Domine,serif;text-align:center}
+body{font-size: 100%; font-family: 'Georgia', serif;text-align:center}
 p{margin:0 10px 10px}
 div#header h1{height:80px;line-height:80px;}
 div#container{text-align:left}
