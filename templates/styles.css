@@ -14,7 +14,7 @@ div#footer{background:#8183db;}
 div#footer p{margin:0;padding:5px 10px}
 div#container{width:900px;margin:0 auto}
 div#wrapper{float:left;width:100%}
-div#content{margin: 0 200px; padding-left: 10px;}
-div#navigation{float:left;width:170px;margin-left:-900px;padding:10px; }
+div#content{margin: 0 230px; padding-left: 10px;}
+div#navigation{float:left;width:200px;margin-left:-900px;padding:10px; }
 div#extra{float:right;width:180px;margin-left:-200px; padding: 10px; }
 div#footer{clear:left;width:100%; min-height: 20px; }
