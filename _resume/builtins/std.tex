@@ -1,0 +1,48 @@
+\usepackage{amsmath,amssymb,amsfonts,amsthm} % Lots of useful math, symbols, etc.
+\usepackage{comment}                         % Comment environment---nothing within is typeset
+\usepackage{ifthen}                          % One of many approaches to simple conditionals when writing macros
+\usepackage{minibox}                         % Alignment/frame-supporting wrapper around \vbox{\hbox{...}...\hbox{...}}
+\usepackage{multirow}                        % Row-spanning table cells
+\usepackage{suffix}                          % Macros with non-alphabetic suffixes (Requires e-TeX)
+\usepackage{graphicx}                        % \includegraphics command to include images
+\usepackage[hyphens]{url}                    % \url command
+\usepackage{xargs}                           % \newcommandx command for defining commands with default args
+\usepackage[dvipsnames]{xcolor}              % colors!
+\usepackage[colorlinks=true,linkcolor=Green,citecolor=NavyBlue]{hyperref} % Hyperlinks
+\usepackage[capitalise]{cleveref}            % \cref for automatically using the right word for refs
+\usepackage{hyphenat}                        % \hyp{} for line-wrappable hyphen, plus redefines \_ to be line-wrappable
+\usepackage{subcaption}                      % \subcaption command for captioning subfigures
+\usepackage{fancyvrb}                        % Verbatim environment: less brittle than \verb
+\usepackage{supertabular}                    % supertabular environment: allows tables to flow to next page
+\usepackage{xspace}                          % fixes space after text-only macros
+\usepackage{microtype}                       % typographical refinements
+
+% Hyperlink wrapping
+\hypersetup{breaklinks=true}
+
+% Proper english
+\newcommand\ie{i.e.,\xspace}
+\newcommand\eg{e.g.,\xspace}
+\newcommand\Ie{I.e.,\xspace}
+\newcommand\Eg{E.g.,\xspace}
+
+% Drafting macros
+\newcommand{\Red}[1]{{\color{red}#1}}
+\newcommand{\redo}[1]{{\color{violet}#1}}
+% adding a prefix else its too easy to miss
+\newcommand{\tocite}[1]{{\color{red}[TOCITE:#1]}}
+\newcommand{\ignore}[1]{}
+
+% Paragraph "subsubsubsection"
+\newcommand{\para}[1]{\smallskip\noindent\textbf{{#1.}~}}
+
+% A fancy dash
+\def\dash---{\kern.16667em---\penalty\exhyphenpenalty\hskip.16667em\relax}
+
+% A compact list
+\newenvironment{CompactItemize}%
+  {\begin{list}{$\blacktriangleright$}%
+    {\leftmargin=\parindent \itemsep=2pt \topsep=2pt
+     \parsep=0pt \partopsep=0pt \listparindent=\parindent}}%
+  {\end{list}}
+\renewcommand{\labelitemi}{$\blacktriangleright$}

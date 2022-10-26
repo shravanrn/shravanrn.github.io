@@ -1,0 +1,190 @@
+\documentclass[10pt, letterpaper]{moderncv}
+
+\usepackage[utf8]{inputenc}
+\usepackage[russian, english]{babel}
+% \usepackage[T1]{fontenc}
+\usepackage{gillius}
+% sudo apt install cm-super texlive-lang-cyrillic
+
+\usepackage[scale=0.81]{geometry}
+\recomputelengths
+
+\newcommand\chref[3][cyan]{\href{#2}{\color{color1}#3}}
+
+\title{}
+
+% \date{\vspace{-1em}}
+
+\pagestyle{plain}
+
+\moderncvtheme[blue]{classic}
+
+\firstname{Shravan Ravi}
+\familyname{Narayan}
+\renewcommand*{\namefont}{\fontsize{24}{26}\mdseries\upshape}
+%\address{4134 4th Ave, Apt 220}{San Diego, 92103}
+% \mobile{+1 (425) 209-7454}
+\extrainfo{
+Assistant Professor \\
+University of Texas, Austin \\
+\chref{https://shravanrn.com}{https://shravanrn.com}}
+\email{shr@cs.utexas.edu}
+% \email{shravanrn@gmail.com}
+
+\nopagenumbers{}
+
+\newcounter{bibctr}
+
+\newcommand{\mkbib}[1]{
+  \refstepcounter{bibctr}
+  \cvitem{\arabic{bibctr}.}{#1}
+}
+
+\newcommand{\refbib}[1]{[\ref{bib:#1}]}
+
+
+\begin{document}
+\hypersetup{pdftitle={Shravan Narayan -- CV}}
+
+\maketitle
+
+\section{Education}
+
+\cventry{2022--current}{PostDoc}{University of California, San Diego}
+{}{}{Advisor: Prof. Deian Stefan}
+%
+\cventry{2016--2022}{Ph.D.}{University of California, San Diego}
+{}{}{Advisor: Prof. Deian Stefan}
+%
+\cventry{2009--2013}{B.Eng}{McGill University}{Montreal}{}{}
+
+\section{Publications}
+
+\input{pubs}
+
+\section{Others}
+
+\mkbib{
+%
+S. Narayan and D. Stefan.
+%
+\chref{https://blog.sigplan.org/2021/07/27/making-software-sandboxing-practical-using-language-based-techniques/}{
+    Making software sandboxing practical using language-based techniques.
+}
+%
+Article in SIGPLAN PL Perspectives blog, Jul 2021.
+}
+
+
+\mkbib{
+RLBox: Retrofitting fine grain isolation in the Firefox renderer.
+IEEE Symposium on Security and Privacy (S\&P), 2021. Invited poster.}
+
+\mkbib{
+S. Narayan, T. Garfinkel, S. Lerner, H. Shacham, and D. Stefan.
+\chref{https://arxiv.org/abs/1912.02285}{
+    Gobi: WebAssembly as a practical path to library sandboxing.
+} In arXiv preprint arXiv:1912.02285, Jan 2019, updated Nov 2019.}
+
+\section{Awards and honors}
+
+\cvitem{2022}{ Winner of the IEEE Cybersecurity Awards for Practice, Secure
+Development Conference 2022. \emph{Retrofitting fine grain isolation in the
+Firefox renderer}.}
+
+\cvitem{2022}{ NSA Best Scientific Cybersecurity Paper, Honorable
+Mention. \emph{Retrofitting fine grain isolation in the Firefox renderer}.}
+
+\cvitem{2021}{ Google V8 research award. \emph{Practical, portable, and
+verified library sandboxing using Wasm}.}
+
+\cvitem{2021}{ Fastly's ``\emph{The edge computer project}'' award. Verifiable
+and spectre-safe sandboxing at the edge.}
+
+\cvitem{2021}{ Finalist, Applied Research Competition, CSAW 2021.
+\emph{\foreignlanguage{russian}{Довер\'{я}й, но провер\'{я}й}: {SFI} safety for
+native-compiled {Wasm}}.}
+
+\cvitem{2020}{ Doctoral Award for Excellence in Research. Computer Science
+and Engineering, UC San Diego.}
+
+\cvitem{2020}{ Winner, Applied Research Competition, CSAW 2020.
+\emph{Retrofitting fine grain isolation in the Firefox renderer}.}
+
+\cvitem{2020}{ Distinguished paper award at the USENIX Security Symposium 2020.
+\emph{Retrofitting fine grain isolation in the Firefox renderer}.}
+
+\section{Software}
+
+\cvitem{\chref{https://rlbox.dev}{rlbox}}
+{A general purpose library sandboxing framework that supports sandboxing plugins.}
+
+\cvitem{\chref{https://github.com/PLSysSec/wasm2c_sandbox_compiler}{sbx-wasm2c}}
+{A sandboxing WebAssembly to C compiler for library sandboxing.}
+
+\cvitem{\chref{https://github.com/PLSysSec/veriwasm}{veriwasm}}
+{Sandbox validator for Cranelift WebAssembly compiler.}
+
+\cvitem{\chref{https://github.com/PLSysSec/swivel}{swivel}}
+{Spectre-resistant WebAssembly compiler.}
+
+\section{Talks}
+
+\cvitem{Sept'22}
+{ At the Strange Loop Conference. Don't Get Owned by Your Dependencies: How Firefox Uses In-process Sandboxing To
+Protect Itself From Exploitable Libraries. }
+
+\cvitem{Aug'22}
+{ At the Black Hat USA Conference. Don't Get Owned by Your Dependencies: How Firefox Uses In-process Sandboxing To
+Protect Itself From Exploitable Libraries. }
+
+\cvitem{Oct'21}
+{ At the IEEE Secure Development Conference. Using RLBox to sandbox
+unsafe C code. }
+
+\cvitem{Aug'21}
+{ At the USENIX Security Symposium. Swivel: Hardening WebAssembly against
+Spectre. }
+
+\cvitem{Jul'21}
+{ At Intel Corp. Swivel: Hardening WebAssembly against Spectre. }
+
+% \cvitem{Oct'20}
+% { At MIT's CSAIL Security Seminar. Retrofitting fine grain isolation in the
+% Firefox renderer. }
+
+\cvitem{Oct'20}
+{ At the Center for Networked Systems' Research Review. RLBox: secure sandboxing for buggy application
+components.  }
+
+\cvitem{Aug'20}
+{ At the USENIX Security Symposium. Retrofitting fine grain isolation in the
+Firefox renderer. }
+
+\cvitem{Jul'20}
+{ At Brave Software, Inc. Retrofitting fine grain isolation in the Firefox
+renderer. }
+
+\section{Prior work experience}
+
+\cvitem{Jun'21--Sept'21}
+%
+{{\textbf{Research Intern}, Intel Corp., Portland, OR, USA (Remote).}
+%
+{\hfill \newline Designed a hardware sandboxing extension based on my research.}}
+
+\cvitem{Jun'20--Sept'20}
+%
+{{\textbf{Research Intern}, Intel Corp., Portland, OR, USA (Remote).}
+%
+{\hfill \newline Integrated my sandboxing research with security projects
+ongoing at Intel.}}
+
+\cvitem{Oct'13--Aug'16}
+%
+{{\textbf{Software Development Engineer}, Microsoft Corp., Redmond, WA, USA.}
+%
+{\hfill \newline Worked in Windows telemetry. Also responsible for developer
+tools within our team of 8.}}
+
+\end{document}
