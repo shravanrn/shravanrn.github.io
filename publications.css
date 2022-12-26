@@ -6,3 +6,7 @@
 	color: grey;
 	font-style: italic;
 }
+
+p {
+    margin: 0.5em;
+}
