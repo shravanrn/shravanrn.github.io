@@ -28,6 +28,7 @@ else
 endif
 	cp latex.out/$(PAPER_OUT) $(PAPER_OUT)
 	cp latex.out/$(PAPER_OUT) ../$(PAPER_OUT)
+# htlatex $(PAPER_SRC)
 
 # Allow `make` to just build the paper
 .DEFAULT_GOAL := build
