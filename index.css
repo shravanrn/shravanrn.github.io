@@ -1,34 +1,12 @@
+#profile > p { margin: 0;}
+#profile-pic { grid-area: profile-pic; max-height: 200px; }
+#profile-first { grid-area: profile-first; 	display: flex; align-items: center; /* align vertical */}
+#profile-post { grid-area: profile-post; }
 
-h2 {
-	padding-top: 20px;
-}
 #profile {
-	height: 2in;
-}
-#profiletext {
-	height: 2in;
-	display: flex;
-	align-items: center; /* align vertical */
-}
-#postprofile {
-	clear: left;
-	margin: 20px 40px 20px 0px;
-}
-.left {
-	float: left;
-}
-.labeltext {
-	font-weight: bold;
-	padding-bottom: 5px;
-}
-.labelvalue {
-	padding-bottom: 10px;
-}
-.authors{
-	color: grey;
-	font-style: italic;
-}
-.paperref{
-	color: grey;
-	font-style: italic;
+	display: grid;
+	grid-template-areas:
+		'profile-pic profile-first'
+		'profile-post profile-post';
+	gap:25px;
 }
