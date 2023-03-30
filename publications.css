@@ -6,7 +6,9 @@
 	color: grey;
 	font-style: italic;
 }
-
+.distinguished{
+	font-weight: bold;
+}
 p {
     margin: 0.5em;
 }
