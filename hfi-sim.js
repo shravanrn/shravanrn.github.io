@@ -162,11 +162,11 @@ function evaluate_hmov(config) {
 
     let address = "0x" + (hmov_config.base + hmov_op.arg).toString(16);
     let op_text = hmov_op.is_write? "write" : "read";
-    let inrange_text = hmov_op.arg < hmov_config.size? "is in the range of explicit data region " : "is outside the valid range of explicit data region ";
+    let inrange_text = hmov_op.arg < hmov_config.size? "in" : "NOT in";
     let perm_check_pass = (hmov_op.is_write && hmov_config.write) || (!hmov_op.is_write && hmov_config.read);
     let perm_check_pass_text = perm_check_pass? "passes" : "does NOT pass";
 
-    append_to_output("hmov" + hmov_config.num + " "+ op_text + " operation at address " +  address + " " + inrange_text + hmov_config.num +
+    append_to_output("hmov" + hmov_config.num + " "+ op_text + " operation at address " +  address + " is " + inrange_text + " the range of explicit data region " + hmov_config.num +
         ". The operation " + perm_check_pass_text + " HFI read/write permission checks.");
 }
 
@@ -196,7 +196,7 @@ function evaluate_mov(config) {
     let perm_check_pass = (mov_op.is_write && mov_config.write) || (!mov_op.is_write && mov_config.read);
     let perm_check_pass_text = perm_check_pass? "passes" : "does NOT pass";
 
-    append_to_output("mov " + op_text + " operation is in implicit data region " + mov_config.num + " at address " +  address +
+    append_to_output("mov " + op_text + " operation at address " +  address + " is in implicit data region " + mov_config.num +
         ". The operation " + perm_check_pass_text + " HFI read/write permission checks.");
 }
 
@@ -229,7 +229,7 @@ function evaluate_exec(config) {
     let address = "0x" + (exec_op.arg).toString(16);
 
     if (!exec_config) {
-        append_to_output("No implicit code region allows executing at address " + address);
+        append_to_output("No implicit code region allows executing at address " + address + ".");
         return;
     }
 
