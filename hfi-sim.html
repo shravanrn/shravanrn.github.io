@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>HFI region simulator</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <script src='./hfi-sim.js'></script>
+</head>
+<body>
+    <h1>This simulator let's you play with different HFI configurations and policies</h1>
+
+    <div>Inputs can be specified hexadecimal numbers (0x123bc) or decimals (12345) </div>
+
+    <!-- Explicit data regions -->
+
+    <h2>Explicit data regions</h2>
+
+    <span style="font-weight: bold;">Region 1: </span>
+    <label for="hfi-explicit-data-region1-base">Base</label>
+    <input id="hfi-explicit-data-region1-base" value="0x12345678000"/>
+    <label for="hfi-explicit-data-region1-size">Bounds</label>
+    <input type="text" id="hfi-explicit-data-region1-size" value="0x100000000"/>
+    <label for="hfi-explicit-data-region1-rtype">Type</label>
+    <select id="hfi-explicit-data-region1-rtype">
+        <option value="Large" selected="selected">Large</option>
+        <option value="Small">Small</option>
+    </select>
+    <label for="hfi-explicit-data-region1-read">Read</label>
+    <input type="checkbox" id="hfi-explicit-data-region1-read" checked />
+    <label for="hfi-explicit-data-region1-write">Write</label>
+    <input type="checkbox" id="hfi-explicit-data-region1-write" checked />
+    <div />
+
+    <span style="font-weight: bold;">Region 2: </span>
+    <label for="hfi-explicit-data-region2-base">Base</label>
+    <input type="text" id="hfi-explicit-data-region2-base" value="0x56780000"/>
+    <label for="hfi-explicit-data-region2-size">Bounds</label>
+    <input type="text" id="hfi-explicit-data-region2-size" value="0x10"/>
+    <label for="hfi-explicit-data-region2-rtype">Type</label>
+    <select id="hfi-explicit-data-region2-rtype">
+        <option value="Large">Large</option>
+        <option value="Small" selected="selected">Small</option>
+    </select>
+    <label for="hfi-explicit-data-region2-read">Read</label>
+    <input type="checkbox" id="hfi-explicit-data-region2-read" checked />
+    <label for="hfi-explicit-data-region2-write">Write</label>
+    <input type="checkbox" id="hfi-explicit-data-region2-write" />
+    <div />
+
+    <span style="font-weight: bold;">Region 3: </span>
+    <label for="hfi-explicit-data-region3-base">Base</label>
+    <input type="text" id="hfi-explicit-data-region3-base" />
+    <label for="hfi-explicit-data-region3-size">Bounds</label>
+    <input type="text" id="hfi-explicit-data-region3-size"/>
+    <label for="hfi-explicit-data-region3-rtype">Type</label>
+    <select id="hfi-explicit-data-region3-rtype">
+        <option value="Large">Large</option>
+        <option value="Small">Small</option>
+    </select>
+    <label for="hfi-explicit-data-region3-read">Read</label>
+    <input type="checkbox" id="hfi-explicit-data-region3-read" checked />
+    <label for="hfi-explicit-data-region3-write">Write</label>
+    <input type="checkbox" id="hfi-explicit-data-region3-write" checked />
+    <div />
+
+    <span style="font-weight: bold;">Region 4: </span>
+    <label for="hfi-explicit-data-region4-base">Base</label>
+    <input type="text" id="hfi-explicit-data-region4-base" />
+    <label for="hfi-explicit-data-region4-size">Bounds</label>
+    <input type="text" id="hfi-explicit-data-region4-size"/>
+    <label for="hfi-explicit-data-region4-rtype">Type</label>
+    <select id="hfi-explicit-data-region4-rtype">
+        <option value="Large">Large</option>
+        <option value="Small">Small</option>
+    </select>
+    <label for="hfi-explicit-data-region4-read">Read</label>
+    <input type="checkbox" id="hfi-explicit-data-region4-read" checked />
+    <label for="hfi-explicit-data-region4-write">Write</label>
+    <input type="checkbox" id="hfi-explicit-data-region4-write" checked />
+    <div />
+
+    <!-- Implicit data regions -->
+
+    <h2>Implicit data regions</h2>
+
+    <span style="font-weight: bold;">Region 1:</span>
+    <label for="hfi-implicit-data-region1-base">Base</label>
+    <input id="hfi-implicit-data-region1-base" value="0x789ab00" />
+    <label for="hfi-implicit-data-region1-size">Bounds</label>
+    <input type="text" id="hfi-implicit-data-region1-size" value="0x100"/>
+    <label for="hfi-implicit-data-region1-read">Read</label>
+    <input type="checkbox" id="hfi-implicit-data-region1-read" />
+    <label for="hfi-implicit-data-region1-write">Write</label>
+    <input type="checkbox" id="hfi-implicit-data-region1-write" />
+    <div />
+
+    <span style="font-weight: bold;">Region 2:</span>
+    <label for="hfi-implicit-data-region2-base">Base</label>
+    <input type="text" id="hfi-implicit-data-region2-base" value="0x789a000" />
+    <label for="hfi-implicit-data-region2-size">Bounds</label>
+    <input type="text" id="hfi-implicit-data-region2-size" value="0x1000"/>
+    <label for="hfi-implicit-data-region2-read">Read</label>
+    <input type="checkbox" id="hfi-implicit-data-region2-read" />
+    <label for="hfi-implicit-data-region2-write">Write</label>
+    <input type="checkbox" id="hfi-implicit-data-region2-write" checked />
+    <div />
+
+    <span style="font-weight: bold;">Region 3:</span>
+    <label for="hfi-implicit-data-region3-base">Base</label>
+    <input type="text" id="hfi-implicit-data-region3-base" value="0x7890000"/>
+    <label for="hfi-implicit-data-region3-size">Bounds</label>
+    <input type="text" id="hfi-implicit-data-region3-size" value="0x10000"/>
+    <label for="hfi-implicit-data-region3-read">Read</label>
+    <input type="checkbox" id="hfi-implicit-data-region3-read" checked />
+    <label for="hfi-implicit-data-region3-write">Write</label>
+    <input type="checkbox" id="hfi-implicit-data-region3-write" checked />
+    <div />
+
+    <span style="font-weight: bold;">Region 4:</span>
+    <label for="hfi-implicit-data-region4-base">Base</label>
+    <input type="text" id="hfi-implicit-data-region4-base" />
+    <label for="hfi-implicit-data-region4-size">Bounds</label>
+    <input type="text" id="hfi-implicit-data-region4-size"/>
+    <label for="hfi-implicit-data-region4-read">Read</label>
+    <input type="checkbox" id="hfi-implicit-data-region4-read" checked />
+    <label for="hfi-implicit-data-region4-write">Write</label>
+    <input type="checkbox" id="hfi-implicit-data-region4-write" checked />
+    <div />
+
+    <!-- Implicit code regions -->
+
+    <h2>Implicit code regions</h2>
+
+    <span style="font-weight: bold;">Region 1:</span>
+    <label for="hfi-implicit-code-region1-base">Base</label>
+    <input id="hfi-implicit-code-region1-base" value="0x9990000" />
+    <label for="hfi-implicit-code-region1-size">Bounds</label>
+    <input type="text" id="hfi-implicit-code-region1-size" value="0x10000"/>
+    <label for="hfi-implicit-code-region1-exec">Execute</label>
+    <input type="checkbox" id="hfi-implicit-code-region1-exec" />
+    <div />
+
+    <span style="font-weight: bold;">Region 2:</span>
+    <label for="hfi-implicit-code-region2-base">Base</label>
+    <input type="text" id="hfi-implicit-code-region2-base" value="0x789a000" />
+    <label for="hfi-implicit-code-region2-size">Bounds</label>
+    <input type="text" id="hfi-implicit-code-region2-size" value="0x1000" />
+    <label for="hfi-implicit-code-region2-exec">Execute</label>
+    <input type="checkbox" id="hfi-implicit-code-region2-exec" checked />
+    <div />
+
+    <!-- Behavior of instructions -->
+
+    <h2>Behavior of instructions</h2>
+
+    <label style="font-weight: bold;" for="hfi-hmov-num">1. Hmov operation</label>
+    <select id="hfi-hmov-num">
+        <option value="1">hmov1</option>
+        <option value="2">hmov2</option>
+        <option value="3">hmov3</option>
+        <option value="4">hmov4</option>
+    </select>
+    <label for="hfi-hmov-accesstype">Access type</label>
+    <select id="hfi-hmov-accesstype">
+        <option value="read">Read</option>
+        <option value="write">Write</option>
+    </select>
+    <label for="hfi-hmov-arg">Instruction argument (index)</label>
+    <input id="hfi-hmov-arg" value="0x1"/>
+    <p style="margin-bottom:5px;" />
+
+
+    <label style="font-weight: bold;">2. Mov/push*</label>
+    <label for="hfi-mov-accesstype">Access type</label>
+    <select id="hfi-mov-accesstype">
+        <option value="read">Read</option>
+        <option value="write">Write</option>
+    </select>
+    <label for="hfi-mov-arg">Address</label>
+    <input id="hfi-mov-arg" value="0x789a000"/>
+    <div>(*Applies to any instruction that accesses memory except hmov)</div>
+    <p style="margin-bottom:5px;" />
+
+    <label style="font-weight: bold;">3. Execute</label>
+    <label for="hfi-exec-arg">Address</label>
+    <input id="hfi-exec-arg" value="0xaaa0000"/>
+    <p style="margin-bottom:5px;" />
+
+    <!-- Check -->
+
+    <h2>Check</h2>
+    <button onclick="evaluate_hfi()">Check config & operations</button>
+    <button onclick="clear_hfi()">Clear inputs</button>
+
+    <pre id="hfi-output" style="background-color: lightgray; min-height: 100px;">
+        Click "Check config & operations" to evaluate the configuration validity and instruction behavior
+    </pre>
+
+</body>
+</html>
