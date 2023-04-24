@@ -79,6 +79,12 @@ function evaluate_hfi_config() {
                 return false;
             }
         }
+
+        if (r.size <= 8) {
+            append_to_output("Explicit data region " + r.num + " should have a size which of at least 0x08");
+            return false;
+        }
+
         return true;
     });
 
@@ -89,8 +95,8 @@ function evaluate_hfi_config() {
             append_to_output("Implicit data region " + r.num + " should have a size which is a power of 2");
             return false;
         }
-        if (r.size <= 16) {
-            append_to_output("Implicit data region " + r.num + " should have a size which of at least 0x10");
+        if (r.size <= 8) {
+            append_to_output("Implicit data region " + r.num + " should have a size which of at least 0x08");
             return false;
         }
         if (r.base % r.size != 0) {
@@ -107,8 +113,8 @@ function evaluate_hfi_config() {
             append_to_output("Implicit code region " + r.num + " should have a size which is a power of 2");
             return false;
         }
-        if (r.size <= 16) {
-            append_to_output("Implicit code region " + r.num + " should have a size which of at least 0x10");
+        if (r.size <= 8) {
+            append_to_output("Implicit code region " + r.num + " should have a size which of at least 0x08");
             return false;
         }
         if (r.base % r.size != 0) {
