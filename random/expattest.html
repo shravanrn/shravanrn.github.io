@@ -7,13 +7,27 @@
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
     <script type="text/javascript">
+        function setSvg(i) {
+            if (i > 0) {
+                i = i - 1;
+                document.getElementById("loc").innerHTML = '<img src="mytest_material_common_sprite321x10.svg">'
+                setTimeout(function(){ clearSvg(i); }, 3000);
+            }
+        }
+
+        function clearSvg(i) {
+            document.getElementById("loc").innerHTML = ''
+            setTimeout(function(){ setSvg(i); }, 3000);
+        }
+
         function dotest() {
-            document.getElementById("loc").innerHTML = "<div>Hi</div>"
+            setSvg(10);
         }
     </script>
 </head>
 <body>
     <button onclick="dotest()">Click to Start</button>
     <div id="loc"></div>
+    <svg></svg>
 </body>
 </html>
